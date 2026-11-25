@@ -19,7 +19,7 @@
 
 ## 0. Project objectives
 
-### 0.1 Main goal
+### Main goal
 
 Develop a platform where registered users can list personal belongings and allow other users to request to borrow them.
 
@@ -34,50 +34,7 @@ The application must allow users to:
 - Complete reservations.
 - Leave reviews after completed reservations.
 
-### 0.2 Architecture
-
 Use a layered architecture with separate frontend and backend projects.
-
-```text
-ShareHub/
-│
-├── ShareHub.sln
-│
-├── src/
-│   │
-│   ├── ShareHub.API/
-│   │   ├── Controllers/
-│   │   ├── Services/
-│   │   ├── Repositories/
-│   │   ├── Data/
-│   │   ├── DTOs/
-│   │   ├── Validators/
-│   │   ├── Middleware/
-│   │   └── Program.cs
-│   │
-│   ├── ShareHub.MVC/
-│   │   ├── Controllers/
-│   │   ├── Services/
-│   │   ├── ViewModels/
-│   │   ├── Views/
-│   │   ├── Models/
-│   │   ├── wwwroot/
-│   │   └── Program.cs
-│   │
-│   └── ShareHub.Contracts/
-│       ├── Items/
-│       ├── Reservations/
-│       ├── Categories/
-│       └── Users/
-│
-└── tests/
-    │
-    ├── ShareHub.API.Tests/
-    ├── ShareHub.MVC.Tests/
-    └── ShareHub.IntegrationTests/
-```
-
----
 
 ## Project responsibilities
 
