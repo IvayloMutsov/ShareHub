@@ -38,6 +38,7 @@ appsettings.Development.json
 appsettings.Production.json
 appsettings.*.local.json
 secrets.json
+launchSettings.json
 
 # ==============================
 # Certificates and private keys
