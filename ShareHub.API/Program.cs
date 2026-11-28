@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using ShareHub.API.Data;
+
 namespace ShareHub.API
 {
     public class Program
@@ -8,10 +11,17 @@ namespace ShareHub.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+
+            // Register ApplicationDbContext
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("TestConnection")
+                ));
 
             var app = builder.Build();
 
@@ -23,8 +33,8 @@ namespace ShareHub.API
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 
